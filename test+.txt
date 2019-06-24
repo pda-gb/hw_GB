@@ -1,0 +1,4 @@
+# исправим
+Goodbye!
+# и добавим
+Goodbye all
