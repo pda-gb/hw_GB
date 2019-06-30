@@ -5,3 +5,4 @@ print('Hello World');
 
 # ljhf,jnrf
 "Hi all"
+print('Hello? my dear friend');
