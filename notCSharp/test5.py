@@ -8,7 +8,7 @@
 
 # код пишем тут...
 
-numb = list(input('¬ведите число'))
+numb = list(input('¬ведите число;;;'))
 i = 0
 while i < len(numb):
     strNumb = numb[i]
