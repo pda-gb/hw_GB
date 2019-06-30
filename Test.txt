@@ -1,7 +1,7 @@
-print('Hello');
+print('Hello;');
 
 #“ест изменени€ локально и бодавлени€ в реп
-print('Hello World');
+print('Hello World;');
 
 # ljhf,jnrf
-"Hi all"
+"Hi all;"
