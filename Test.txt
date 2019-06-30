@@ -5,4 +5,7 @@ print('Hello World');
 
 # ljhf,jnrf
 "Hi all"
+#урок 5
 print('Hello? my dear friend');
+#Рад вас видеть
+print('Glad to see you')
