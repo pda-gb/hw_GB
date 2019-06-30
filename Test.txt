@@ -1,11 +1,11 @@
-print('Hello');
+print('Hello;');
 
 #Тест изменения локально и бодавления в реп
-print('Hello World');
+print('Hello World;');
 
 # ljhf,jnrf
-"Hi all"
+"Hi all;"
 #урок 5
-print('Hello? my dear friend');
+print('Hello? my dear friend;');
 #Рад вас видеть
-print('Glad to see you')
+print('Glad to see you;')
