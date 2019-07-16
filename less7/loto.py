@@ -77,7 +77,7 @@ def get_tick():
         num_ticket = all_num_ticket.pop(
             random.randint(0, (i - 1)))  # берём из списка цифр (от 1 до iго), удаляя его из списка
         i = len(all_num_ticket)  # вычисляется оставшееся кол-во цифр
-        ticket.append(num_ticket)
+        ticket.append(str(num_ticket))
         itm += 1
     return ticket
 
@@ -141,3 +141,4 @@ while i > 0:
     else:
         print('Неправильно')
         break
+print('Вы выйграли!')
