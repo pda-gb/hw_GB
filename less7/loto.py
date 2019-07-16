@@ -59,7 +59,9 @@
 """
 
 import random
+
 answer = []
+
 
 def get_tick():
     '''
@@ -72,74 +74,70 @@ def get_tick():
     ticket = []
     itm = 0
     while itm < 15:  # ф. набирает в ticket 15 случ. неповторяющихся цифр
-        num_ticket = all_num_ticket.pop(random.randint(0, (i - 1))) # берём из списка цифр (от 1 до iго), удаляя его из списка
-        i = len(all_num_ticket) #вычисляется оставшееся кол-во цифр
+        num_ticket = all_num_ticket.pop(
+            random.randint(0, (i - 1)))  # берём из списка цифр (от 1 до iго), удаляя его из списка
+        i = len(all_num_ticket)  # вычисляется оставшееся кол-во цифр
         ticket.append(num_ticket)
         itm += 1
     return ticket
 
 
-def print_tick():
-    import random
-    u1 = [43, 27, 90, 61, 79, 45, 8, 16, 53, 73, 37, 50, 87, 60, 4]
+def print_tick(u1):
     itm = 0
-    while itm < 3:
-        if itm == 2:
-            line1 = u1.copy()
-            u1.clear()
-        else:
-            line1 = [u1.pop(i) for i in range(5)] #
+    z = 0
+    while itm < 3:  # ф. три раза печатает строку билета
+        line1 = u1[(0 + z):(5 + z)]
         line1.sort()
-
+        z += 5
 
         itm2 = 0
-        while itm2 < 5:  # добавляем случайным образом ' ' в строку билета
+        while itm2 < 5:  # добавляем случайным образом  пять ' ' в строку билета
             line1.insert(random.randint(0, len(line1)), ' ')
             itm2 += 1
         print(*line1)  # * - вывод без '', []
         itm += 1
+    #u1.clear()
 
 
-def user_answer(userx):
-    us_an = input('Введите ответ:')
-    for i in userx:
-        if i == us_an:
-            print('Верно')
-        else:
-            print('Неправильно')
+def user_answer():
+    #global a
+    a = 0
+    us_an = input('Введите ответ, если нет такой цифры то, [-]:')
+    for i2 in user:
+        if str(i2) == str(us_an) and str(i2) == str(barrel):
+            a = 1
+            itm = user.index(i2)
+            user.remove(i2)
+            user.insert(itm, 'X')
             break
-
-
+        elif str(i2) != us_an and us_an == '-':
+            a = 2
+        else:
+            a = 3
+    return a
 
 
 user = get_tick()
 user2 = get_tick()
-print(answer)
-print('------ Ваша карточка -----')
-print_tick()
-print('--------------------------')
-print('-- Карточка компьютера ---')
-print_tick()
-print('--------------------------')
 
 all_barrel = [x for x in range(1, 91)]  # массим всех бочонков
 i = len(all_barrel)  # кол-во бочонков
 barrel = 0  # текущий бочонок
 while i > 0:
-    barrel = all_barrel.pop(random.randint(0, (i - 1))) # берём из списка бочонков (от 1 до iго), удаляя его из списка
-    i = len(all_barrel) #вычисляется оставшееся кол-во бочонков
+    barrel = all_barrel.pop(random.randint(0, (i - 1)))  # берём из списка бочонков (от 1 до iго), удаляя его из списка
+    i = len(all_barrel)  # вычисляется оставшееся кол-во бочонков
     answer = f'Новый бочонок: {barrel} (осталось {i})'
-    user_answer()
 
-
-
-
-
-
-
-
-
-user = get_tick()
-#print(user)
-user2 = get_tick()
-print(user2)
+    print(answer)
+    print('------ Ваша карточка -----')
+    print_tick(user)
+    print('--------------------------')
+    print('-- Карточка компьютера ---')
+    print_tick(user2)
+    print('--------------------------')
+    print(' ')
+    if user_answer() < 3:
+        print('Верно')
+    else:
+        print('Неправильно')
+        break
